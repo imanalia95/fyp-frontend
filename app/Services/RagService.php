@@ -9,7 +9,7 @@ class RagService
     public function recommend($title, $description, $top_n = 3)
     {
         $response = Http::post(
-            'https://lovely-abundance-production-2737.up.railway.app/api/recommend',
+            env('FASTAPI_URL') . '/api/recommend',
             [
                 'title' => $title,
                 'description' => $description,
